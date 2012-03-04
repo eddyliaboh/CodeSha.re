@@ -1,12 +1,6 @@
-div.content
-{
-width:220px;
-padding:10px;
-border:5px solid gray;
-margin:0px;
-}
+
 body{
-background-image:url(textures/sitebg.png);
+background-image:url(/textures/sitebg.png);
 }
 
 #top_bar {

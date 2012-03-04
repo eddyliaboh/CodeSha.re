@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<img src="seperator.png">
+<img src="/images/seperator.png">
   <title>CodeShare - CodePasting Tool</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   
-  <link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 </style>
 
 <script type="text/javascript">
@@ -33,7 +33,7 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 	
 	<div id="top_bar">
   <div align=center>
-  <img src="head.png">
+  <img src="/images/head.png">
 	  <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
