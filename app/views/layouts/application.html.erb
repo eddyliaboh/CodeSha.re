@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<img src="seperator.png">
+  <title>CodeShare - CodePasting Tool</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</style>
+
+<script type="text/javascript">
+function placeIt() {
+if (!document.all) {
+document.getElementById("top_bar").style.top = window.pageYOffset +"px"; // For Mozilla etc.
+document.getElementById("loginbox").style.top = window.pageYOffset +"px"; // For Mozilla etc.
+} else {
+document.getElementById("top_bar").style.top = document.documentElement.scrollTop +"px"; // For the IE...
+document.getElementById("loginbox").style.top = document.documentElement.scrollTop +"px"; // For the IE...
+}
+
+}
+</script>
+  
+</div>
+</div>
+</head>
+
+
+
+<body onload="placeIt()">
+	
+	<div id="top_bar">
+  <div align=center>
+  <img src="head.png">
+	  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+	
+	
+	
+
+</div>
+</div>
+<div align=center>
+	<div id="user_nav">
+  <% if current_user %>
+    Logged in as <%= current_user.email %>.
+    <%= link_to "Log out", log_out_path %>
+    <p><%= link_to 'New Code', new_post_path %></p>
+  	<% else %>
+    <%= link_to "Sign up", sign_up_path %> or
+    <%= link_to "log in", log_in_path %>
+  <% end %>
+  <%= yield %>
+</div>
+</div>
+
+</body>
+</html>

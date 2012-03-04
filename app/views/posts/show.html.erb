@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<style type="text/css" src = "style.css"></style>
+</head>
+<body>
+<div align=center>
+
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  
+  <h1><%= @post.title %></h1>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <div class="content"><%= @post.name %></div>
+</p>
+
+<p>
+  <b>Content:</b>
+  <div class="content"><%= @post.content %></div>
+</p>
+<p>
+  <b>Location:</b>
+  <div class="content"><%= @post.location %></div>
+</p>
+
+
+	<p>
+	______________________________________________________________
+	</p>
+<h1> Comments </h1>
+<% @post.comments.each do |comment| %>
+	<p>
+		<b>Commenter:</b>
+		<p><%= comment.commenter %></p>
+	</p>
+	
+	<p>
+		<b>Comment:</b>
+		<p><%= comment.body %></p>
+	</p>
+	
+	<p>
+	______________________________________________________________
+	</p>
+<% end %>
+
+<h1> Add a comment </h1>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<div class = "field">
+	<%= f.label :commenter %><br />
+	<%= f.text_field :commenter %>
+	</div>
+	
+	<div class = "field">
+	<%= f.label :body %><br />
+	<%= f.text_field :body %>
+	</div>
+	
+	<div class = "actions">
+		<%= f.submit %>
+		</div>
+	
+	<% end %>
+	
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+</div>
+</body>
+<div align=center>
+
+
+
+
+</div>
+</html>

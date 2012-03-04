@@ -1,0 +1,53 @@
+<html>
+<head>
+<style type="text/css">
+table, td, th
+{
+border:1px solid gray;
+}
+th
+{
+background-color:gray;
+color:white;
+}
+</style>
+</head>
+</html>
+<title>Community Blog</title>
+<div align=center>
+<h1>Listing posts</h1>
+</div>
+<div align=center>
+<table>
+  <tr>
+    <th><p>Name</p></th>
+    <th><p>Title</p></th>
+    <th><p>Content</p></th>
+    <th><p>Location</p></th>
+    <th>
+    <th>
+    <th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= post.location %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<div align=center>
+<%= link_to 'New Post', new_post_path %>
+</div>
+<div align=center>
+<p>
+Logo by Alex B.(@Des_alex)
+</p>
+</div>
