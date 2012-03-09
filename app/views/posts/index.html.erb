@@ -16,6 +16,7 @@ color:white;
 <title>Community Blog</title>
 <div align=center>
 <h1>Listing posts</h1>
+<h1> ### </h1>
 </div>
 <div align=center>
 <div align=center>
@@ -28,8 +29,8 @@ color:white;
 
 <% @posts.each do |post| %>
   <tr>
-    <td><p><%= post.title %></p></td>
-    <td><p><%= link_to 'Show Full', post %></p></td>
+    <td bgcolor=#959595><p><b><%= post.title %></b></p></td>
+    <td bgcolor=#bababa><p><%= link_to 'Show Full', post %></p></td>
     
   </tr>
 <% end %>
@@ -37,7 +38,11 @@ color:white;
 </div>
 <br />
 <div align=center>
-
+###$$$###
+</div>
+<div align=center>
+Codeshare, Inc.
+The open-source pastebin.
 </div>
 <div align=center>
 

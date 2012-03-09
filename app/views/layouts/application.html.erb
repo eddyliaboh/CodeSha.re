@@ -32,7 +32,10 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 <body onload="placeIt()">
 	
 	<div id="top_bar">
+	
   <div align=center>
+  
+
   <img src="/images/head.png">
 	  <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>

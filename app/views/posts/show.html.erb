@@ -1,17 +1,25 @@
 <html>
 
-<script type="text/javascript">
 
-var thisURL = window.location.protocol + "://" + window.location.host + "/" + window.location.pathname;
-
-</script>
-<style type="text/css">div.content
+<style type="text/css">
+div.content
 {
-width:220px;
+width:500px;
 padding:10px;
 border:5px solid gray;
+background-color:#bababa;
 margin:0px;
-}</style>
+}
+
+div.box
+{
+width:600px;
+padding:10px;
+border:5px solid gray;
+background-color:#959595;
+margin:0px;
+}
+</style>
 
 <div align=center>
 
@@ -47,30 +55,40 @@ margin:0px;
 <h1> Comments </h1>
 <% @post.comments.each do |comment| %>
 	<p>
+		<div class = "content">
 		<b>Commenter:</b>
 		<p><%= comment.commenter %></p>
 	</p>
+	</div>
 	
 	<p>
+		<div class = "content">
 		<b>Comment:</b>
 		<p><%= comment.body %></p>
+		
 	</p>
+	</div>
 	
 	<p>
 	______________________________________________________________
 	</p>
 <% end %>
-
+<div class="box">
 <h1> Add a comment </h1>
 <%= form_for([@post, @post.comments.build]) do |f| %>
+	<div class = "content">
 	<div class = "field">
 	<%= f.label :commenter %><br />
 	<%= f.text_field :commenter %>
 	</div>
+	</div>
+	
+	<div class = "content">
 	
 	<div class = "field">
 	<%= f.label :body %><br />
 	<%= f.text_field :body %>
+	</div>
 	</div>
 	
 	<div class = "actions">
@@ -78,7 +96,7 @@ margin:0px;
 		</div>
 	
 	<% end %>
-	
+	</div>
 	<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 </div>
