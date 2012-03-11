@@ -1,0 +1,37 @@
+<h1>Sign Up :)</h1>
+<style type = "text/css">
+div.content
+{
+width:500px;
+padding:10px;
+border:1px solid gray;
+background-color:#bababa;
+margin:0px;
+}
+</style>
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  	<div class="content">
+	  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :email %>
+    </div>
+    </div>
+    
+	<div class="content">
+	  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio %>
+    </div>
+    </div>
+  <p class="button"><%= f.submit %></p>
+<% end %>

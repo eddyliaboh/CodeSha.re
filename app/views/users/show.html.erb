@@ -3,30 +3,58 @@
 
 <style type="text/css">div.content
 {
+background-color:#bababa;
 width:220px;
 padding:10px;
 border:5px solid gray;
 margin:0px;
 }</style>
-
-<div align=center>
+<div class="row-fluid">
+  <div class="span12">
+   <div align=center>
 
 <p id="notice"><%= notice %></p>
 
 <p>
 
   <tr>
-  <div class = "container">
+  <div class = "content">
   	<td><b><p>Username:</b></td>
     <td><b><p><%= @user.email %></b></td>
+	
+
+    
 
 
 </div>
+
+
+
+
+
+
+
+
 
 </p>
+    <div class="row-fluid">
+    
+      <div class="span6"> <div class = "content">Bio:<p> <%= @user.bio %></p></div></div>
+      <div class="span6"> <div class = "content">Posts:</div></div>
+    </div>
+  </div>
+</div>
+
 
 
 
 
 </div>
+
+	  <% if current_user.email == @user.email%>
+
+	<%= link_to "Edit your profile!", edit_user_path %>
+
+<%end%>
+
 </html>

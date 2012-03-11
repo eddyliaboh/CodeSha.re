@@ -1,5 +1,14 @@
 <h1>Sign Up :)</h1>
-
+<style type = "text/css">
+div.content
+{
+width:500px;
+padding:10px;
+border:1px solid gray;
+background-color:#bababa;
+margin:0px;
+}
+</style>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -11,18 +20,23 @@
       </ul>
     </div>
   <% end %>
+  	<div class="content">
 	  <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :username %><br />
     <%= f.text_field :email %>
     </div>
+    </div>
+    <div class="content">
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
     </div>
-
+	</div>
+	<div class="content">
   	  <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
+  </div>
   </div>
   <p class="button"><%= f.submit %></p>
 <% end %>

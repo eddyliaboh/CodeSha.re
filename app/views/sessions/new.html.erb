@@ -1,13 +1,26 @@
 <h1>Log in! :)</h1>
-
+<style type = "text/css">
+div.content
+{
+width:500px;
+padding:10px;
+border:1px solid gray;
+background-color:#bababa;
+margin:0px;
+}
+</style>
 <%= form_tag sessions_path do %>
+	<div class = "content">
   <p>
-    <%= label_tag :email %><br />
+    <%= label_tag :username %><br />
     <%= text_field_tag :email, params[:email] %>
   </p>
+  </div>
+  <div class = "content">
   <p>
     <%= label_tag :password %><br />
     <%= password_field_tag :password %>
   </p>
+  </div>
   <p class="button"><%= submit_tag "Log in" %></p>
 <% end %>
