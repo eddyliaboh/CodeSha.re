@@ -6,7 +6,8 @@ Learning::Application.routes.draw do
 get "log_in" => "sessions#new", :as => "log_in"
 get "sign_up" => "users#new", :as => "sign_up"
 get "new_post" => "posts#new", :as => "new_post"
-  root :to => "posts#index"
+
+  root :to => "home#index"
 resources :users
 resources :sessions
 
