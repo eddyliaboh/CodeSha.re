@@ -50,11 +50,12 @@ margin:0px;
 
 
 </div>
-
+  <% if current_user %>
 	  <% if current_user.email == @user.email%>
 
 	<%= link_to "Edit your profile!", edit_user_path %>
 
+<%end%>
 <%end%>
 
 </html>
