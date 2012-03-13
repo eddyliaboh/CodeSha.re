@@ -1,4 +1,4 @@
-<h1>Edit your profile!</h1>
+
 <style type = "text/css">
 div.content
 {
@@ -20,10 +20,12 @@ margin:0px;
       </ul>
     </div>
   <% end %>
-  	<div class="content">
-	  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :email %>
+  <% if current_user %>
+  <% if current_user.email == @user.email%>
+<h1>Edit your profile!</h1>
+	
+<div class="content">
+		<%=@user.email%>
     </div>
     </div>
     
@@ -34,4 +36,22 @@ margin:0px;
     </div>
     </div>
   <p class="button"><%= f.submit %></p>
+  
+
+  	<%else%>
+  
+  	<h1> You do not have access to this page! </h1>
+  	
+
+
+<% end %>
+
+
+
+<%else%>
+  
+  	<h1> You do not have access to this page! </h1>
+  	
+<% end %>
+
 <% end %>
