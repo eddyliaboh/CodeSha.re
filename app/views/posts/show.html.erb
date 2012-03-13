@@ -1,3 +1,4 @@
+
 <html>
 
 
@@ -39,7 +40,8 @@ margin:0px;
 
 <p>
   <b>Content:</b>
-  <div class="content"><%= @post.content %></div>
+ 
+  <div class="content"><%=simple_format(@post.content )%></div>
 </p>
 <p>
   <b>Location:</b>

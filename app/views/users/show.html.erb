@@ -8,7 +8,15 @@ width:220px;
 padding:10px;
 border:5px solid gray;
 margin:0px;
-}</style>
+}
+div.bio{
+background-color:#bababa;
+width:300px;
+padding:10px;
+border:5px solid gray;
+margin:0px;
+}
+</style>
 <div class="row-fluid">
   <div class="span12">
    <div align=center>
@@ -20,7 +28,7 @@ margin:0px;
   <tr>
   <div class = "content">
   	<td><b><p>Username:</b></td>
-    <td><b><p><%= @user.email %></b></td>
+    <td><b><p><%= simple_format(@user.email) %></b></td>
 	
 
     
@@ -39,7 +47,7 @@ margin:0px;
 </p>
     <div class="row-fluid">
     
-      <div class="span6"> <div class = "content">Bio:<p> <%= @user.bio %></p></div></div>
+      <div class="span6"> <div class = "bio"><b>Bio:</b><p> <%=simple_format( @user.bio )%></p></div></div>
       <div class="span6"> <div class = "content">Posts:</div></div>
     </div>
   </div>
