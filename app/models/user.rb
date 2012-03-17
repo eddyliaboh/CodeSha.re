@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :bio
+    include Gravtastic
+gravtastic :fieldname
+  
+  attr_accessible :email, :password, :password_confirmation, :bio, :fieldname
     validates :email,  :presence => true
     validates :bio, :presence => true
+    validates :fieldname, :presence => true
   attr_accessor :password
   before_save :encrypt_password
   
@@ -25,4 +29,6 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
+  
+
 end

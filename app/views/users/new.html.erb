@@ -27,6 +27,18 @@ margin:0px;
     </div>
     </div>
     <div class="content">
+    <div class="field">
+    <%= f.label :email %> <p> (This is only used for your gravatar. <a href = "http://gravatar.com/" > What's that? </a>)<br />
+    <%= f.text_field :fieldname %>
+    </div>
+    </div>
+        <div class="content">
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio %>
+    </div>
+	</div>
+    <div class="content">
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>

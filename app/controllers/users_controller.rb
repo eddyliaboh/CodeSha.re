@@ -52,7 +52,16 @@ def create
     redirect_to root_url, :notice => "Signed up!"
  
   else
-    format.html { render :action => "new" }
+   render :action => "new" 
 end
 end
+def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to posts_url }
+      format.json { head :ok }
+    end
+  end
 end

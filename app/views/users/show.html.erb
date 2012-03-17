@@ -28,7 +28,7 @@ margin:0px;
   <tr>
   <div class = "content">
   	<td><b><p>Username:</b></td>
-    <td><b><p><%= simple_format(@user.email) %></b></td>
+    <td><b><p><%= simple_format(@user.email) %> <%= image_tag @user.gravatar_url %></b></td>
 	
 
     
@@ -49,8 +49,9 @@ margin:0px;
     
       <div class="span6"> <div class = "bio"><b>Bio:</b><p> <%=simple_format( @user.bio )%></p></div></div>
       <div class="span6"> <div class = "content">Posts:</div></div>
+
     </div>
-  </div>
+  
 </div>
 
 
