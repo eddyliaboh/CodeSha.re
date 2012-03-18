@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name  %> 
   </div>
   <div class="field">
     <%= f.label :title %><br />
@@ -27,8 +27,13 @@
   </div>
   <div class="field">
     <%= f.label :location %><br />
-    <%= f.text_area :location %>
+    <%= f.text_field :location %>
   </div>
+   <div class="field">
+  <%= f.label :syntax %>
+ 
+  <%= f.select( :syntax, Post::SYNTAX) %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -44,14 +44,19 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 	
 	
 
+
+    
+
+
+
 </div>
 </div>
 <div align=center>
 	<div id="user_nav">
   <% if current_user %>
-  	
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
+  	<p><%= link_to "Current posts", posts_path %></p>
+    Logged in as <%= link_to current_user.email, current_user %>
+    <p><%= link_to "Log out", log_out_path %></p>
     <p><%= link_to 'New Code', new_post_path %></p>
   	<% else %>
     <%= link_to "Sign up", sign_up_path %> or
