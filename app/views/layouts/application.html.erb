@@ -30,13 +30,27 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 
 
 <body onload="placeIt()">
+
 	
 	<div id="top_bar">
 	
   <div align=center>
   
 
-  <img src="/images/head.png">
+<%= link_to image_tag("/images/head.png", :border => 
+0 ), root_path , :title => "title text" %> 
+
+  <% if current_user %>
+  	<%= link_to "Current posts", posts_path %> --
+  	
+    Logged in as <%= link_to current_user.email, current_user %> --
+    <%= link_to 'New Code', new_post_path %> --
+    <%= link_to "Log out", log_out_path %> 
+    
+  	<% else %>
+    <%= link_to "Sign up", sign_up_path %> or
+    <%= link_to "log in", log_in_path %>
+  <% end %>
 	  <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
@@ -53,18 +67,18 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 </div>
 <div align=center>
 	<div id="user_nav">
-  <% if current_user %>
-  	<p><%= link_to "Current posts", posts_path %></p>
-    Logged in as <%= link_to current_user.email, current_user %>
-    <p><%= link_to "Log out", log_out_path %></p>
-    <p><%= link_to 'New Code', new_post_path %></p>
-  	<% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
-  <% end %>
+ 
   <%= yield %>
 </div>
 </div>
 
 </body>
+
+<footer onLoad="placeIt()">
+
+<hr size=2>
+<div align=center>
+  <h6>CodeShare, Inc. The open-source pastebin.</h6>
+  </div>
+</footer>
 </html>

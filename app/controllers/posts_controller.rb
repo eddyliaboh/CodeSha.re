@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, :notice => 'Code has been uploaded.' }
+        format.html { redirect_to @post }
         format.json { render :json => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }

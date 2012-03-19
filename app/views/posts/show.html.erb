@@ -12,6 +12,15 @@ background-color:#bababa;
 margin:0px;
 }
 
+div.page
+{
+width:800px;
+padding:10px;
+border:5px solid gray;
+background-color:#bababa;
+margin:0px;
+}
+
 div.box
 {
 width:600px;
@@ -21,7 +30,10 @@ background-color:#959595;
 margin:0px;
 }
 </style>
-
+<% if current_user.email == "CodeShare"%>
+<td><%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %></td>
+<%end%>
+  </tr>
 <div align=center>
 
 <p id="notice"><%= notice %></p>
@@ -47,12 +59,6 @@ margin:0px;
 <p>
   <h4><b>Location:</b></h4>
   <div class="content"><%= @post.location %></div>
-</p>
 
-
-
-
-</p>
-	
 </div>
 </html>
