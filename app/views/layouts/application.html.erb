@@ -36,14 +36,14 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 	
   <div align=center>
   
-
+<h3>
 <%= link_to image_tag("/images/head.png", :border => 
-0 ), root_path , :title => "title text" %> 
+0 ), root_path , :title => "Home Page" %> 
 
   <% if current_user %>
-  	<%= link_to "Current posts", posts_path %> --
+  	<%= link_to 'Current Posts', posts_path %>  --
   	
-    Logged in as <%= link_to current_user.email, current_user %> --
+    Logged in as <%= link_to current_user.email, current_user %>--
     <%= link_to 'New Code', new_post_path %> --
     <%= link_to "Log out", log_out_path %> 
     
@@ -54,7 +54,7 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 	  <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
-	
+	</h3>
 	
 	
 
