@@ -8,7 +8,9 @@ get "sign_up" => "users#new", :as => "sign_up"
 get "new_post" => "posts#new", :as => "new_post"
 
   root :to => "home#index"
-resources :users
+resources :users do
+	resources :user_comments
+end
 resources :sessions
 
   resources :posts do

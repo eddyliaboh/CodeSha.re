@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     include Gravtastic
+    has_many :user_comments
 gravtastic :fieldname
   
   attr_accessible :email, :password, :password_confirmation, :bio, :fieldname

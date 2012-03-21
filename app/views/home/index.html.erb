@@ -3,8 +3,16 @@ div.content
 {
 width:500px;
 padding:10px;
-border:1px solid gray;
+
 background-color:#bababa;
+margin:0px;
+}
+div.subcontent
+{
+width:300px;
+padding:10px;
+
+background-color:#959595;
 margin:0px;
 }
 </style>
@@ -25,11 +33,19 @@ margin:0px;
   </tr>
 
 <b><h1>Your Dashboard:</h1></b>
+
 	<div class = "content">
-	<h7> Dashboards are currently being worked on! :) </h7>
+	<h3> You're logged in as <%=current_user.email%> </h3>
+	<%= image_tag current_user.gravatar_url %> 
+	<div class = "subcontent">
+	<%=simple_format(current_user.bio )%>
+	
+	
 	</div>
 	
-  
+	</div>
+
+	
   	<% else %>
    <img src = "/images/homepage.png">
   <% end %>
