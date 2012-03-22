@@ -1,6 +1,26 @@
 <html>
 <head>
 <style type="text/css">
+div.post
+{
+border-radius: 15px;
+width:500px;
+padding:10px;
+
+background-color:#bababa;
+margin:0px;
+}
+
+div.postcontent
+{
+border-radius: 15px;
+width:300px;
+padding:10px;
+
+background-color:#868686;
+margin:0px;
+}
+
 table, td, th
 {
 border:1px solid gray;
@@ -22,22 +42,29 @@ color:white;
 <div align=center>
 <div align=center>
 
-<table>
-  <tr>
-    
-    
-  </tr>
+
 
 <% @posts.each do |post| %>
-  <tr>
-    <td bgcolor=#959595><p><b><%= post.title %></b></p></td>
-    <td bgcolor=#bababa><p><%= link_to 'Show Full', post %></p></td>
+<div align=center>
+<div class = "post">
+	
+    <p><b><%= post.title %></b>, by <b><%=post.name%></b> </p> 
+    <div class = "postcontent">
+    <p><b><%= post.content %></b></p>
+    </div>
+    <br>
+  	<%= link_to 'Show Full', post %>
     
-  </tr>
+    </post>
+      
+    </div>
+<br>
 <% end %>
-</table>
+
+
+
 </div>
-<br />
+
 <% else %>
 <h1>You must be logged in to access this page.</h1>
 <%end%>
