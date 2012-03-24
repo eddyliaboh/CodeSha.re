@@ -39,15 +39,13 @@ color:white;
 <h1>All Codes</h1>
 
 </div>
-<div align=center>
-<div align=center>
+
 
 
 
 <% @posts.each do |post| %>
-<div align=center>
-<div class = "post">
-	
+<% if post.listing == 'Listed' %>
+	<div class = "post">
     <p><b><%= post.title %></b>, by <b><%=post.name%></b> </p> 
     <div class = "postcontent">
     <p><b><%= post.content %></b></p>
@@ -58,7 +56,17 @@ color:white;
     </post>
       
     </div>
+    </div>
 <br>
+
+
+
+<%end%>
+
+
+	
+
+
 <% end %>
 
 

@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 	SYNTAX=['Ruby','C++', 'Java', 'C', 'C#', 'CSS', 'HTML', 'Plain text']
-	ADMIN=['alex', 'eddy', 'CodeShare']
+	LISTING=['Listed', 'Unlisted']
   validates :name,  :presence => true
   validates :title, :presence => true,
                     :length => { :minimum => 5 }
