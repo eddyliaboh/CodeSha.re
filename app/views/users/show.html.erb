@@ -6,14 +6,22 @@
 background-color:#bababa;
 width:220px;
 padding:10px;
-border:5px solid gray;
+border-radius:15px;
+margin:0px;
+}
+div.subcontent{
+background-color:#868686;
+width:200px;
+padding:10px;
+border-radius:15px;
 margin:0px;
 }
 div.bio{
+
 background-color:#bababa;
 width:300px;
 padding:10px;
-border:5px solid gray;
+border-radius:15px;
 margin:0px;
 }
 </style>
@@ -27,8 +35,8 @@ margin:0px;
 
   <tr>
   <div class = "content">
-  	<td><b><p>Username:</b></td>
-    <td><b><p><%= simple_format(@user.email) %> <%= image_tag @user.gravatar_url %></b></td>
+  	
+    <td><b><h3><%=@user.email %>'s Profile. </h3><%= image_tag @user.gravatar_url %></b></td>
 	
 
     
@@ -47,7 +55,7 @@ margin:0px;
 </p>
     <div class="row-fluid">
     
-      <div align="center"> <div class = "bio"><b>Bio:</b><p> <%=simple_format( @user.bio )%></p></div></div>
+      <div align="center"> <div class = "bio"><b>Bio:</b><p><div class="subcontent"> <%=simple_format( @user.bio )%></p></div></div></div>
 
 
     </div>

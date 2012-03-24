@@ -1,4 +1,22 @@
+<style type="text/css">
+div.content
+{
+width:500px;
+padding:10px;
+border-radius: 15px;
+background-color:#bababa;
+margin:0px;
+}
 
+div.subcontent
+{
+width:300px;
+padding:10px;
+border-radius: 15px;
+background-color:#868686;
+margin:0px;
+}
+</style>
 
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
@@ -14,26 +32,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :creator%><br />
+  <div class="content">
+    <h2><%= f.label :creator%></h2>
     <%= f.text_field :name  %> 
   </div>
+  </div>
+  <br>
   <div class="field">
-    <%= f.label :title %><br />
+    <div class="content">
+    <h2><%= f.label :title %></h2>
     <%= f.text_field :title %>
   </div>
+  </div>
+  <br>
   <div class="field">
-    <%= f.label :content %><br />
+    <div class="content">
+    <h2><%= f.label :content %></h2>
     <%= f.text_area :content %>
   </div>
+  </div>
+  <br>
   <div class="field">
-    <%= f.label :location %><br />
+    <div class="content">
+   <h2><%= f.label :location %></h2>
     <%= f.text_field :location %>
   </div>
+  </div>
+  <br>
    <div class="field">
-  <%= f.label :syntax %>
- 
+     <div class="content">
+  <h2><%= f.label :syntax %></h2>
+
   <%= f.select( :syntax, Post::SYNTAX) %>
 </div>
+ </div>
+ <br>
   <div class="actions">
     <%= f.submit %>
   </div>
