@@ -4,8 +4,17 @@ div.content
 {
 width:500px;
 padding:10px;
-border:1px solid gray;
+border-radius: 15px;
 background-color:#bababa;
+margin:0px;
+}
+
+div.subcontent
+{
+width:300px;
+padding:10px;
+border-radius: 15px;
+background-color:#868686;
 margin:0px;
 }
 </style>
@@ -23,18 +32,19 @@ margin:0px;
   <% if current_user %>
   <% if current_user.email == @user.email%>
 <h1>Edit your profile!</h1>
-	
+	<br>
 <div class="content">
 		<%=@user.email%>
     </div>
     </div>
-    
+    <br>
 	<div class="content">
 	  <div class="field">
     <%= f.label :bio %><br />
     <%= f.text_area :bio %>
     </div>
     </div>
+    <br>
   <p class="button"><%= f.submit %></p>
   
 

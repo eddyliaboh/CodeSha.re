@@ -1,17 +1,33 @@
 
-
+h6{
+color : white;
+}
 body{
+background: #484848 ;
 background-image:url(/images/textures/sitebg.png);
 }
-
+footer{
+position:fixed;
+   left:0px;
+   bottom:0px;
+   height:20px;
+   width:100%;
+background: #484848 ;
+-webkit-border-top-left-radius: 30px;
+-webkit-border-top-right-radius: 30px;
+-moz-border-radius-topleft: 30px;
+-moz-border-radius-topright: 30px;
+border-top-left-radius: 30px;
+border-top-right-radius: 30px;
+}
 #top_bar {
 position: fixed;
 top: 0px;
 left: 0px;
 width: 100%;
 height: 80px;
-background: #ffffe1;
-
+background: #ffffff;
+background-image:url(/images/textures/bg.png);
 float: left;
 z-index:2;
 font-size: 12px;
@@ -19,7 +35,7 @@ font-weight: normal;
 display: inline;
 font-family: Arial, Verdana, sans-serif;
 text-align: left;
-background-image:url(/images/textures/bg.png);
+
 color: black;
 -moz-box-shadow: 2px 2px 2px #515151;
 -webkit-box-shadow: 2px 2px 2px #515151;
