@@ -1,11 +1,21 @@
-<h1>Sign Up :)</h1>
+<h1>Sign Up! :)</h1>
+<br>
 <style type = "text/css">
 div.content
 {
 width:500px;
 padding:10px;
-border:1px solid gray;
+border-radius: 15px;
 background-color:#bababa;
+margin:0px;
+}
+
+div.subcontent
+{
+width:300px;
+padding:10px;
+border-radius: 15px;
+background-color:#868686;
 margin:0px;
 }
 </style>
@@ -26,29 +36,34 @@ margin:0px;
     <%= f.text_field :email %>
     </div>
     </div>
+    <br>
     <div class="content">
     <div class="field">
     <%= f.label :email %> <p> (This is only used for your gravatar. <a href = "http://gravatar.com/" > What's that? </a>)<br />
     <%= f.text_field :fieldname %>
     </div>
     </div>
+    <br>
         <div class="content">
   <div class="field">
     <%= f.label :bio %><br />
     <%= f.text_field :bio %>
     </div>
 	</div>
+	<br>
     <div class="content">
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
     </div>
 	</div>
+	<br>
 	<div class="content">
   	  <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
   </div>
+  <br>
   <p class="button"><%= f.submit %></p>
 <% end %>

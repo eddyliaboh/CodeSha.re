@@ -1,11 +1,21 @@
 <h1>Log in! :)</h1>
+<br>
 <style type = "text/css">
 div.content
 {
 width:500px;
 padding:10px;
-border:1px solid gray;
+border-radius: 15px;
 background-color:#bababa;
+margin:0px;
+}
+
+div.subcontent
+{
+width:300px;
+padding:10px;
+border-radius: 15px;
+background-color:#868686;
 margin:0px;
 }
 </style>
@@ -16,11 +26,13 @@ margin:0px;
     <%= text_field_tag :email, params[:email] %>
   </p>
   </div>
+  <br>
   <div class = "content">
   <p>
     <%= label_tag :password %><br />
     <%= password_field_tag :password %>
   </p>
   </div>
+  <br>
   <p class="button"><%= submit_tag "Log in"%></p>
 <% end %>

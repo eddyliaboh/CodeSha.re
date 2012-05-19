@@ -43,10 +43,11 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 	
   <div align=center>
   
-<h3>
+
+
 <%= link_to image_tag("/images/head.png", :border => 
 0 ), root_path , :title => "Home Page" %> 
-
+<h3>
   <% if current_user %>
   	<%= link_to 'All Codes', posts_path %>  --
   	
@@ -61,6 +62,7 @@ document.getElementById("loginbox").style.top = document.documentElement.scrollT
 	  <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
+
 	</h3>
 	
 	
