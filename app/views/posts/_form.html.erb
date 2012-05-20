@@ -1,3 +1,4 @@
+
 <style type="text/css">
 div.content
 {
@@ -16,6 +17,10 @@ border-radius: 15px;
 background-color:#868686;
 margin:0px;
 }
+div.name
+{
+opacity:0;
+}
 </style>
 
 <%= form_for(@post) do |f| %>
@@ -31,12 +36,8 @@ margin:0px;
     </div>
   <% end %>
 
-  <div class="field">
-  <div class="content">
-    <h2><%= f.label :creator%></h2>
-    <%= f.text_field :name  %> 
-  </div>
-  </div>
+  
+
   <br>
   <div class="field">
     <div class="content">
@@ -72,6 +73,16 @@ margin:0px;
 
   <div class="actions">
     <%= f.submit %>
+  </div>
+  
+  <div class="name">
+
+      <h2><b><%= f.label :Creator %></b></h2>
+
+
+		    <%@post.name  = current_user.email%> 
+        <%= f.text_field :name  , :readonly => true %>
+
   </div>
   
 <% end %>

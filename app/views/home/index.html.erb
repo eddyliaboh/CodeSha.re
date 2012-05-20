@@ -41,7 +41,7 @@ margin:0px;
 	<%= image_tag current_user.gravatar_url %> 
 	<div class = "subcontent">
 	<%=simple_format(current_user.bio )%>
-	
+	<a href="/users/<%=current_user.id%>/edit">Edit Your Profile!</a>
 	
 	</div>
 	

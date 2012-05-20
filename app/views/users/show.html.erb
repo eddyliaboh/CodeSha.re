@@ -1,6 +1,8 @@
 <html>
 
-
+<% if current_user.email == "CodeShare"%>
+<td><%= link_to 'Delete', @user, :confirm => 'Are you sure?', :method => :delete %></td>
+<%end%>
 <style type="text/css">div.content
 {
 background-color:#bababa;
@@ -67,12 +69,6 @@ margin:0px;
 
 
 </div>
-  <% if current_user %>
-	  <% if current_user.email == @user.email%>
-
-	<%= link_to "Edit your profile!", edit_user_path %>
-
-<%end%>
-<%end%>
+  
 
 </html>
